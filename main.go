@@ -4,7 +4,9 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/prestonchoate/aoc-2023/solutions"
 	"github.com/prestonchoate/aoc-2023/solutions/day1"
+	"github.com/prestonchoate/aoc-2023/solutions/day2"
 )
 
 func main() {
@@ -16,11 +18,30 @@ func main() {
 	case 1:
 		handleDay1(*partSelect)
 		break
+	case 2:
+		if *partSelect == 1 {
+			total, _ := day2.Solve(solutions.GetInputString("inputs/day2-part1.txt"))
+			fmt.Printf("Day Two Part One solution: %v\n", total)
+		}
+		if *partSelect == 2 {
+			_, totalPower := day2.Solve(solutions.GetInputString("inputs/day2-part1.txt"))
+			fmt.Printf("Day Two Part Two soltuion: %v\n", totalPower)
+		}
+		if *partSelect != 1 && *partSelect != 2 {
+			handleInvalidInput(*daySelect, *partSelect)
+		}
+		break
 	default:
-		fmt.Printf("%v is an invalid day. Please try again\n", *daySelect)
+		handleInvalidInput(*daySelect, *partSelect)
 		break
 	}
 }
+
+func handleInvalidInput(daySelect int, partSelect int) {
+	fmt.Printf("%v - %v is an invalid selection. Please try again\n", daySelect, partSelect)
+}
+
+// TODO: This seems uneccesary
 
 func handleDay1(part int) {
 	switch part {
