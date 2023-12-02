@@ -1,4 +1,4 @@
-package solutions
+package day1
 
 import (
 	"testing"
@@ -38,8 +38,21 @@ zoneight234
 func TestD1P2Edge(t *testing.T) {
 	input := "twolxzdhfourqjeightfour55zjvconeightnf"
 
-	want := 28
-	res := d1p2(input)
+	nums := map[string]int{
+		"zero":  0,
+		"one":   1,
+		"two":   2,
+		"three": 3,
+		"four":  4,
+		"five":  5,
+		"six":   6,
+		"seven": 7,
+		"eight": 8,
+		"nine":  9,
+	}
+
+	want := 8
+	_, res := findRightNum(input, &nums, true)
 
 	if want != res {
 		t.Fatalf("Expected %v \t Got: %v\n", want, res)
