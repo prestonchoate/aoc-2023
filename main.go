@@ -7,6 +7,7 @@ import (
 	"github.com/prestonchoate/aoc-2023/solutions"
 	"github.com/prestonchoate/aoc-2023/solutions/day1"
 	"github.com/prestonchoate/aoc-2023/solutions/day2"
+	"github.com/prestonchoate/aoc-2023/solutions/day3"
 )
 
 func main() {
@@ -31,6 +32,18 @@ func main() {
 			handleInvalidInput(*daySelect, *partSelect)
 		}
 		break
+	case 3:
+		if *partSelect == 1 {
+			total := day3.Solve(solutions.GetInputString("inputs/day3.txt"))
+			fmt.Printf("Day Three Part One solution: %v\n", total)
+		}
+		if *partSelect == 2 {
+			total := day3.SolveP2(solutions.GetInputString("inputs/day3.txt"))
+			fmt.Printf("Day Three Part Two solution: %v\n", total)
+		}
+		if *partSelect != 1 && *partSelect != 2 {
+			handleInvalidInput(*daySelect, *partSelect)
+		}
 	default:
 		handleInvalidInput(*daySelect, *partSelect)
 		break
