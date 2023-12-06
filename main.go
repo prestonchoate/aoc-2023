@@ -9,6 +9,7 @@ import (
 	"github.com/prestonchoate/aoc-2023/solutions/day2"
 	"github.com/prestonchoate/aoc-2023/solutions/day3"
 	"github.com/prestonchoate/aoc-2023/solutions/day4"
+	"github.com/prestonchoate/aoc-2023/solutions/day5"
 )
 
 func main() {
@@ -72,6 +73,17 @@ func main() {
 		}
 
 		printSolutionString(*daySelect, *partSelect, total)
+	case 5:
+		val := 0
+		input := solutions.GetInputString("inputs/day5.txt")
+		if *partSelect == 1 {
+			val = day5.SolveP1(input)
+		}
+		if *partSelect == 2 {
+			val = day5.SolveP2(input)
+		}
+
+		printSolutionString(*daySelect, *partSelect, val)
 	default:
 		handleInvalidInput(*daySelect, *partSelect)
 		break
