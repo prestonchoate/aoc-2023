@@ -10,6 +10,7 @@ import (
 	"github.com/prestonchoate/aoc-2023/solutions/day3"
 	"github.com/prestonchoate/aoc-2023/solutions/day4"
 	"github.com/prestonchoate/aoc-2023/solutions/day5"
+	"github.com/prestonchoate/aoc-2023/solutions/day6"
 )
 
 func main() {
@@ -81,6 +82,18 @@ func main() {
 		}
 		if *partSelect == 2 {
 			val = day5.SolveP2(input)
+		}
+
+		printSolutionString(*daySelect, *partSelect, val)
+
+	case 6:
+		val := 0
+		input := solutions.GetInputString("inputs/day6.txt")
+		if *partSelect == 1 {
+			val = day6.SolveP1(input)
+		}
+		if *partSelect == 2 {
+			val = day6.SolveP2(input)
 		}
 
 		printSolutionString(*daySelect, *partSelect, val)
