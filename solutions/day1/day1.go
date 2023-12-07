@@ -2,29 +2,17 @@ package day1
 
 import (
 	"fmt"
-	"log"
 	"math"
-	"os"
 	"strings"
 	"unicode"
 )
 
-func D1P1_Solve(filepath string) int {
-	input, err := os.ReadFile(filepath)
-	if err != nil {
-		log.Fatalf(err.Error())
-	}
-	input_str := string(input)
-	return d1p1(input_str)
+func D1P1_Solve(input string) int {
+	return d1p1(input)
 }
 
-func D1P2_Solve(filepath string) int {
-	input, err := os.ReadFile(filepath)
-	if err != nil {
-		log.Fatalf(err.Error())
-	}
-	input_str := string(input)
-	return d1p2(input_str)
+func D1P2_Solve(input string) int {
+	return d1p2(input)
 }
 
 func d1p1_old(input string) int {
