@@ -3,6 +3,7 @@ package solutions
 import (
 	"log"
 	"os"
+	"strings"
 )
 
 func GetInputString(filepath string) string {
@@ -10,5 +11,5 @@ func GetInputString(filepath string) string {
 	if err != nil {
 		log.Fatalf(err.Error())
 	}
-	return string(input)
+	return strings.TrimSpace(string(input))
 }
